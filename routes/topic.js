@@ -3,12 +3,17 @@ var router = express.Router();
 const models = require('../db/models');
 
 router.get('/', function(req, res, next) {
+    //models.Topic.findAll().then(function(topic) {
     models.Topic.findAll().then(function(topic) {
         res.render('topic_page', {
             title: 'Topic',
             topic_list: topic
         });
     });
+});
+
+router.post('/createPost', function(req, res, next) {
+    res.render('create_post');
 });
 
 router.post('/create', function(req, res, next) {
