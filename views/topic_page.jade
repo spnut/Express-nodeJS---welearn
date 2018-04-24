@@ -4,8 +4,8 @@ html
   body
     h1 Tutor Page
     form(method='POST', action='/topic/createPost')
-      button#post_button(name='post_button',
-        onclick="window.location.href='/topic/createPost'") Creat Post
+      input(type='submit', value='Create Post', name='post_button')
+      
     ul
     for i in topic_list
         h3  Topic :  #{i.title}
