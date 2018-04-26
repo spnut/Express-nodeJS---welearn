@@ -66,7 +66,7 @@ class NewVisitorTest(unittest.TestCase):
     time.sleep(2)
 
     check_url_tutor = self.browser.current_url
-    self.assertRegex(check_url_tutor, 'http://localhost:3000/topic')
+    self.assertRegex(check_url_tutor, 'http://localhost:3000/tutor')
     time.sleep(2)
      
     self.fail('Finish the test!')
