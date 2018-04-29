@@ -16,10 +16,5 @@
     "retry-as-promised": "^2.3.2",
     "sequelize": "^4.37.6",
     "sqlite3": "^4.0.0"
-  },
-  "devDependencies": {
-    "chai": "^4.1.2",
-    "mocha": "^5.1.1",
-    "supertest": "^3.0.0"
   }
 }

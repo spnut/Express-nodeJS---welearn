@@ -3,9 +3,21 @@ html
   title Detail
   |     
   body
-   ul
+    ul
         h3  Topic :  #{topic_list.title}
-        p 
+        br 
         li Detail :  #{topic_list.detail}
 
-
+    form(method='POST', action='/tutor/detail/#{topic_list.id}')
+        br
+        | comment:
+        br
+        textarea#comment_text(name='comment_text', placeholder='Enter your comment')
+        br
+        input(type='submit', value='comment', name='submit_comment')
+        br
+    h1 Comment:
+    br
+  for i in comment_list
+    p #{i.data}
+   

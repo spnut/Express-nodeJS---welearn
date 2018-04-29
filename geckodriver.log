@@ -136,19 +136,3 @@
 [Child 27624, Chrome_ChildThread] WARNING: pipe error (15): Connection reset by peer: file /build/firefox-xPvJxO/firefox-59.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
 [Child 27624, Chrome_ChildThread] WARNING: pipe error (34): Connection reset by peer: file /build/firefox-xPvJxO/firefox-59.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
 [Child 27624, Chrome_ChildThread] WARNING: pipe error (3): Connection reset by peer: file /build/firefox-xPvJxO/firefox-59.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
-1524724454945	geckodriver	INFO	geckodriver 0.19.1
-1524724455017	geckodriver	INFO	Listening on 127.0.0.1:48393
-1524724456296	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.2v2IUFDLdyS2"
-1524724461816	Marionette	INFO	Enabled via --marionette
-1524724469288	Marionette	INFO	Listening on port 33821
-1524724469386	Marionette	WARN	TLS certificate errors will be ignored for this session
-[Child 14679, Chrome_ChildThread] WARNING: pipe error (15): Connection reset by peer: file /build/firefox-xPvJxO/firefox-59.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
-[Child 14679, Chrome_ChildThread] WARNING: pipe error (3): Connection reset by peer: file /build/firefox-xPvJxO/firefox-59.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
-1524724606064	geckodriver	INFO	geckodriver 0.19.1
-1524724606069	geckodriver	INFO	Listening on 127.0.0.1:51363
-1524724606300	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.tTJg17FaJpG7"
-1524724608058	Marionette	INFO	Enabled via --marionette
-1524724611406	Marionette	INFO	Listening on port 43931
-1524724611414	Marionette	WARN	TLS certificate errors will be ignored for this session
-[Child 14910, Chrome_ChildThread] WARNING: pipe error (15): Connection reset by peer: file /build/firefox-xPvJxO/firefox-59.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
-[Child 14910, Chrome_ChildThread] WARNING: pipe error (3): Connection reset by peer: file /build/firefox-xPvJxO/firefox-59.0.1+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
