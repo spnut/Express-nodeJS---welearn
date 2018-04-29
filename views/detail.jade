@@ -1,8 +1,12 @@
+
 doctype html
 html
   title Detail
   |     
   body
+    form(method='POST', action='/tutor/deleteTopic/#{topic_list.id}')
+        input(type='submit', value='Delete Post', name='delete_button')
+        br
     ul
         h3  Topic :  #{topic_list.title}
         br 
@@ -18,6 +22,8 @@ html
         br
     h1 Comment:
     br
-  for i in comment_list
-    p #{i.data}
-   
+    for i in comment_list
+      p #{i.data}
+      form(method='POST', action='/tutor/deleteComment/#{i.id}')
+        input(type='submit', value='Delete Comment', name='delete_comment_button')
+        br

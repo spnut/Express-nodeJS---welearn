@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
 
 /* Tutor Page 
    you see create post button and all topic*/
-router.post('/tutor', function(req, res, next) {
+router.get('/tutor', function(req, res, next) {
     models.DB.findAll().then(function(topic) {
         res.render('tutor_page', {
             topic_list: topic
@@ -31,23 +31,10 @@ router.get('/tutor/detail/:id', function(req, res, next) {
     models.DB.findById(ID).then(topic => { 
         models.Comment.findAll({where: {topicID: ID }}).then(function(comment){
         res.render('detail', {topic_list: topic, comment_list: comment});
-        //res.send(topic);
     });
 });
 });
-        /*  
-    })
-);
-    var ID = req.params.id
-    models.DB.findById(ID, models.Comment.findAll({ where: {topicID: ID }}, function()
-        {
 
-        }).then(function(topic) {
-        res.render('detail', {
-            topic_list: topic
-        });
-    });
-});
 
 /* create data in models Topic(database*/
 router.post('/tutor/create', function(req, res, next) {
@@ -57,49 +44,44 @@ router.post('/tutor/create', function(req, res, next) {
     }).then(function() {
         res.redirect('/tutor');
     });
-
-    //models.DB.create({
-    //    title: req.body.title_text,
-    //    detail: req.body.detail_text,
-        /*comment: [
-            { comment: req.body.detail_text}
-        ]*/
-
-    //}, {
-    //    include: [{
-    //        model: models.Comment,
-    //        as: 'comment'
-    //     }]
-    //}).then(function() {
-    //    res.redirect('/tutor');
-    //});
 });
 
+/* create data in models Comment(database*/
 router.post('/tutor/detail/:id', function(req, res, next) {
     var ID = req.params.id
-    //models.DB.findById(ID).then({
-    //    include: [{
-    //        model: models.Comment,
-    //        as: 'comment'
-    //     }]
-    //});
+ 
     models.Comment.create({
         data: req.body.comment_text,
         topicID: ID
      }).then(function() {
         res.redirect('/tutor');
     });
-    /*models.DB.findById(ID)
-    .then({include: [{
-            model: models.Comment,
-            as: 'comment'
-         }]});
+});
 
-    models.Comment.create({
-        comment: req.body.comment_text
-    }).then(function() {
-        res.redirect('/tutor');
-    });*/
+/* Delete topic and all comment in topic*/
+router.post('/tutor/deleteTopic/:id', function(req, res){
+    var ID = req.params.id;
+    models.DB.destroy({
+        where: {
+            id : ID
+        }
+    }).then(delete_comment_too => {
+        models.Comment.destroy({where: {topicID : ID}})
+    }).then(function(deleted){
+            res.redirect('/tutor');
+    });
+});
+
+/* Delete a comment*/
+router.post('/tutor/deleteComment/:id', function(req, res){
+    var ID = req.params.id;
+    models.Comment.destroy({
+        where: {
+            id : ID
+        }
+    }).then(function(deleted){
+            res.redirect('/tutor');
+    });
 });
 
 module.exports = router;
