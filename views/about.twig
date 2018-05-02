@@ -1,0 +1,36 @@
+<title>AboutPage</title>
+<style>
+body {background-color: #F5FFFA;}
+
+#myHeader {
+    background-color: lightblue;
+    color: black;
+    padding: 40px;
+    text-align: center;
+} 
+
+table, th, td {
+    border: 50px solid #b2ebf2 ;
+}
+
+</style>
+{% block body %}
+    <center><h1 id="myHeader">About Page</h1></center>
+    <center><table>
+        <tr>       
+
+            <th><img src="../about/fern.jpg" style="width:250px;height:250px;" margin="left"></th>
+        
+            <th><img src="../about/nut.jpg" style="width:250px;height:250px;" margin="center"></th>
+        
+            <th><img src="../about/toy.jpg" style="width:250px;height:250px;" margin="right"></th>
+        </tr>
+        <tr>
+            <th>น.ส.กฤตยนันทน์  เริงเขตรกรณ์ </th>
+            <th>นาย ศุภณัฐ   โกศัลวิตร</th>
+            <th>น.ส.เบญญาภา  พูลทองคำ</th>
+        </tr>
+    </table></center>  
+   
+
+{% endblock %}
