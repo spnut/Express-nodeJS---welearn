@@ -1,0 +1,11 @@
+ <title>HomePage</title>
+
+{% block body %}
+    <h1>Home Page</h1>
+    <form method="GET" action="/tutor">
+        <input type="submit" name="tutor_button" value="Tutor">
+    </form>
+    <form method="GET" action="/">
+        <input type="submit" name="Examination_button" value="Examination">
+    </form>
+{% endblock %}

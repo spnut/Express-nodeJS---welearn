@@ -1,0 +1,30 @@
+<title>Detail</title>
+{% block body %}
+  <h3>Topic : {{topic_list.title}}</h3>
+  <br>
+  <li>
+    Detail : {{topic_list.detail}}
+  </li>
+  <br>
+  <form method="POST" action="/tutor/deleteTopic/{{topic_list.id}}">
+    <input type="submit" name="delete_button" value="Delete Post">
+  </form>
+  <form method="POST" action="/tutor/detail/{{topic_list.id}}">
+    <br>
+    comment :
+    <br>
+    <textarea name="comment_text" placeholder="Enter your commet">
+    </textarea>
+    <br>
+    <input type="submit" name="submit_comment" value="commet">
+  </form>
+  <h1>Comment:</h1>
+  <br>
+  {% for i in comment_list %}
+    {{i.data}}
+    <br>
+  <form method="POST" action="/tutor/deleteComment/{{i.id}}">
+    <input type="submit" name="delete_comment_button" value="Delete Comment">
+  </form>
+  {% endfor %}
+{% endblock %}
