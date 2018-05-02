@@ -1,0 +1,17 @@
+
+<title>ExaminationPage</title>
+
+{% block body %}
+    <h1>Examination Page</h1>
+    <form method="POST" action="/examination/createPost">
+        <input type="submit" name="post_button" value="Create Post">
+    </form>
+    {% for i in topic_list %}
+
+        <a href="http://localhost:3000/examination/detail/{{i.id}}">{{i.title}}</a>
+        <br>
+        <br>
+    {% endfor %}
+ 
+ 
+{% endblock %}

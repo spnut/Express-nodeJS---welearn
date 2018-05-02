@@ -1,11 +1,11 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  var Topic = sequelize.define('Topic', {
+  var DB_exam = sequelize.define('DB_exam', {
     title: DataTypes.TEXT,
     detail: DataTypes.TEXT
   }, {});
-  Topic.associate = function(models) {
+  DB_exam.associate = function(models) {
     // associations can be defined here
   };
-  return Topic;
+  return DB_exam;
 };

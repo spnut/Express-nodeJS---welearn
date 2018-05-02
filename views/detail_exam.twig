@@ -6,10 +6,13 @@
     Detail : {{topic_list.detail}}
   </li>
   <br>
-  <form method="POST" action="/tutor/deleteTopic/{{topic_list.id}}">
+  <form method="POST" action="/examination/deleteTopic/{{topic_list.id}}">
     <input type="submit" name="delete_button" value="Delete Post">
   </form>
-  <form method="POST" action="/tutor/detail/{{topic_list.id}}">
+  <form method="POST" action="/">
+    <input type="submit" name="file_button" value="Upload">
+  </form>
+  <form method="POST" action="/examination/detail/{{topic_list.id}}">
     <br>
     comment :
     <br>
@@ -23,7 +26,7 @@
   {% for i in comment_list %}
     {{i.data}}
     <br>
-  <form method="POST" action="/tutor/deleteComment/{{i.id}}">
+  <form method="POST" action="/examination/deleteComment/{{i.id}}">
     <input type="submit" name="delete_comment_button" value="Delete Comment">
   </form>
   {% endfor %}
