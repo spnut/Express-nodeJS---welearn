@@ -5,13 +5,25 @@
   <li>
     Detail : {{topic_list.detail}}
   </li>
+  
+
+  <form method="GET" action="/downloadfile/{{topic_list.fileUpload}}">
+    <input type="submit" name="download_button" value="Download">
+  </form>
+
+  <!--<button id="download_button">Download</button>
+     <script type="text/javascript">
+        $("download_button").click(function(){
+            window.open("/downloadfile/{{topic_list.id}});
+           })) 
+     </script>-->
+
   <br>
   <form method="POST" action="/examination/deleteTopic/{{topic_list.id}}">
     <input type="submit" name="delete_button" value="Delete Post">
   </form>
-  <form method="POST" action="/">
-    <input type="submit" name="file_button" value="Upload">
-  </form>
+  
+
   <form method="POST" action="/examination/detail/{{topic_list.id}}">
     <br>
     comment :

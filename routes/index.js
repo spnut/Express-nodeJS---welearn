@@ -3,7 +3,8 @@ var router = express.Router();
 const models = require('../db/models');
 var multer = require('multer')
 var upload = multer({ dest: 'public/uploads' })
-
+var path = require('path');
+var http = require('http');
 
 
 /* GET home page. */
@@ -121,8 +122,10 @@ router.get('/examination/detail/:id', function(req, res, next) {
 
 /* create data in models Topic(database*/
 
+
 router.post('/examination/create', upload.any(),function(req, res, next) {
-    res.send(req.files)
+    //res.send(req.files)
+  
     models.DB_exam.create({
         title: req.body.title_text,
         detail: req.body.detail_text,
@@ -131,6 +134,16 @@ router.post('/examination/create', upload.any(),function(req, res, next) {
     }).then(function() {
         res.redirect('/examination');
     });
+});
+
+/* download in examination board */
+router.get('/downloadfile/:file',function(req, res, next) {
+    var file_name = req.params.file
+    //console.log(file_name)
+    var fileLocation = path.join('public/uploads/',file_name);
+    res.download(fileLocation, file_name);
+    //res.download(".public/uploads/" + file_name, file_name)
+    
 });
 
 /* create data in models Comment(database*/
