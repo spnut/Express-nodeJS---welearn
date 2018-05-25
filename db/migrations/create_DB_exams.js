@@ -14,6 +14,9 @@ module.exports = {
       detail: {
         type: Sequelize.TEXT
       },
+      fileUpload: {
+        type: Sequelize.TEXT
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

@@ -1,12 +1,15 @@
 {% block body %}
   <h1>Examination Page</h1>
-  <form method="POST" action="/examination/create"><br>Topic:
+  <form method="POST" action="/examination/create" enctype="multipart/form-data"><br>Topic:
     <input id="title_text" name="title_text" placeholder="Enter your detail"><br>
     <br>Detail:<br>
     <textarea id="detail_text" name="detail_text" placeholder="Enter your detail"></textarea><br>
+    <input type="file" id="myFile" name="myFile">
     <input type="submit" name="submit_text" value="post">
-  </form>
-  <form method="POST" action="/">
-        <input type="submit" name="file_button" value="Add file">
-  </form>
+    
+
+    <!--Upload file-->
+    
+    
+  
 {% endblock %}

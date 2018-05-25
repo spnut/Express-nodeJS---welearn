@@ -1,6 +1,10 @@
 var express = require('express');
 var router = express.Router();
 const models = require('../db/models');
+var multer = require('multer')
+var upload = multer({ dest: 'public/uploads' })
+
+
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -116,10 +120,14 @@ router.get('/examination/detail/:id', function(req, res, next) {
 
 
 /* create data in models Topic(database*/
-router.post('/examination/create', function(req, res, next) {
+
+router.post('/examination/create', upload.any(),function(req, res, next) {
+    res.send(req.files)
     models.DB_exam.create({
         title: req.body.title_text,
         detail: req.body.detail_text,
+        fileUpload: req.files[0].filename
+
     }).then(function() {
         res.redirect('/examination');
     });
